@@ -39,6 +39,7 @@
         margin: 0 auto;
         max-width: 250px;
         flex: 0 0 33.33%;
+        background-color: white;
         
     }
     .card:hover 
