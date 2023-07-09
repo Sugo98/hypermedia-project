@@ -67,13 +67,13 @@
               <h2 class="amount">$70M</h2>
               <h3 class="where">invested to shape the next era of technology</h3>
             </div>
-            <div class="money-area-2">
-              <h2 class="amount">$50M</h2>
-              <h3 class="where">allocated towards energy from renewable sources</h3>
-            </div>
             <div class="money-area-3">
               <h2 class="amount">$40M</h2>
               <h3 class="where">fostering the future of medical advancements</h3>
+            </div>
+            <div class="money-area-2">
+              <h2 class="amount">$50M</h2>
+              <h3 class="where">allocated towards energy from renewable sources</h3>
             </div>
           </div>
         </div>

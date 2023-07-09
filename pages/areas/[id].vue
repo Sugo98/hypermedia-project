@@ -72,7 +72,7 @@
     .single()
 
   if (error) console.log(error)
-  console.log(area)
+  console.log(area.name.toLowerCase())
 
   let currentIndex = ref(0);
   const projects = area.projects;
