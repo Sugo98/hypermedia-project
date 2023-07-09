@@ -150,7 +150,7 @@
     text-decoration: none;
   }
   
-  .link:hover, .link-about {
+  .link:hover, .link-about:hover {
     text-decoration: underline;
   }
   </style>
