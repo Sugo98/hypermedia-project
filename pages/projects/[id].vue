@@ -21,7 +21,7 @@
     <section>
       <div class="image-description-container">
         <div class="project-image">
-          <img id="main-img" :src="project.image" />
+          <img id="main-img" :src="'/img/projects/' + project.id + '.png'" />
         </div>
         <div class="project-description">
           <p>{{ project.description }}</p>

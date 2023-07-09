@@ -65,6 +65,7 @@
         height: auto;
         width: auto;
         margin: auto;
+        background-color: white;
     }
 
     .details 
