@@ -7,7 +7,7 @@
               <h1 id="inner1">Our people</h1>
             </div>
             <h2 id="inner2">We lend an operator's perspective and decades of experience to the founders and companies we work with.</h2>
-            <NuxtLink class="link" to="/team">Learn More</NuxtLink>
+            <NuxtLink class="link" to="/people">Learn More</NuxtLink>
           </div>
         </section>
   
@@ -37,7 +37,7 @@
               <h1 id="inner1">About Us</h1>
             </div>
             <h2 id="inner2">Learn more about our mission and values.</h2>
-            <NuxtLink class="link-about" to="/contact">Read More</NuxtLink>
+            <NuxtLink class="link-about" to="/contacts">Read More</NuxtLink>
           </div>
         </section>
       </main>
