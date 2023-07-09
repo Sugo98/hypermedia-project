@@ -26,7 +26,7 @@
       </div>
     </section>
 
-  <div class="projects-container">
+    <div class="projects-container">
       <section class="projects">
         <div class="supervisor-carousel-container">
           <div class="supervisor-container">
@@ -51,7 +51,7 @@
                   <img class="button-img" @click="previous" src="@/assets/img/prev.png"/>
                 </div>
                 <div class="button"> 
-                  <img class="button-img" @click="previous" src="@/assets/img/next.png"/>
+                  <img class="button-img" @click="next" src="@/assets/img/next.png"/>
                 </div>
               </div>
             </div>  
@@ -130,6 +130,7 @@ function next() {
 }
 
 .orientation-info {
+  position: fixed;
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -139,6 +140,8 @@ function next() {
   width: 100vw;
   color: #023047;
   padding-left: 2%;
+  background-color: white;
+  width: fit-content;
 }
 
 .link-to-team:hover {
@@ -313,5 +316,52 @@ function next() {
     filter: invert();
     background-color: rgb(253, 207, 184);
     border-radius: 100%;
+  }
+
+  @media (max-width: 768px) {
+
+    .person-info-container {
+    margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+  padding: 0 10%;
+}
+
+.person-info {
+  text-align: center;
+  font-size: x-large;
+  background-color: rgba(2, 48, 71, 0.9);
+  border-radius: 7px;
+  color: white;
+  width: 100%;
+  margin-bottom: 20px;
+}
+    .image-description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10%;
+  margin-bottom: 5%;
+  border-bottom: 2px solid lightgray;
+  border-top: 2px solid lightgray;
+}
+
+.person-image {
+  margin-top: 20%;
+  margin-right: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.person-description {
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1%;
+  border-radius: 7px;
+  text-align: center;
+  width: 100%;
+}
   }
 </style>

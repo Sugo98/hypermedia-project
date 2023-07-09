@@ -6,11 +6,11 @@
           <div id="projects">
             <div id="our-projects-container">
               <h1 id="our-projects">
-                Our Portfolio
+                Top Projetcs
               </h1>
             </div>
             <h2 id="projects-introduction">
-              Our venture capital portfolio showcases extensive industry expertise and profound domain understanding. We have effectively guided numerous companies in thriving through periods of rapid expansion and navigating complex business landscapes.
+              Our portfolio boasts a collection of top-notch investments that demonstrate our astute decision-making and keen understanding of market trends. These strategic investments have yielded remarkable returns and propelled companies to new heights of success, solidifying our reputation as a trusted partner in driving exceptional growth.
             </h2>
           </div>
         </section>
@@ -103,6 +103,8 @@
   #our-projects-container {
     text-align: right;
     margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
   }
 
   #our-projects {
@@ -194,6 +196,7 @@
         #projects-introduction {
             font-size: 1rem; /* Adjust the font size for smaller screens */
             margin: 0;
+            text-align: center;
         }
 
         .card-intro {

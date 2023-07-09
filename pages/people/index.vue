@@ -31,11 +31,12 @@
                     <h3>Excels in leading and inspiring a talented team, driving collaborative efforts, and maximizing individual strengths to achieve exceptional results.</h3>
                 </div>
                 <div class="ceo-card">
-                    <PersonCard 
-                    :name="ceo.name"
-                    :role="ceo.role"
-                    :link="'/people/' + ceo.id"
-                    :image="'/img/people/P' + ceo.id + '.avif'"/>
+                    <PersonCard
+                    :name = "ceo.name"
+                    :role = "ceo.role"
+                    :link = "'/people/' + ceo.id"
+                    :image = "'/img/people/P' + ceo.id + '.avif'"
+                />
                 </div>
             </div>
         </section>
@@ -65,7 +66,7 @@ for (let person of data) {
         employees.push(person)
 }
 
-console.log(data)
+
 
 </script>
 
@@ -94,6 +95,7 @@ console.log(data)
         color: white;
         margin-bottom: 3%;
         padding: 2rem;
+        text-shadow: 1px 1px black;
     }
 
     #Team {

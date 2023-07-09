@@ -104,6 +104,7 @@
     color: white;
     margin-bottom: 1%;
     padding: 2rem;
+    text-shadow: 1px 1px black;
   }
 
   #projects {
@@ -187,4 +188,33 @@
   margin-bottom: 3%;
 }
 
+@media (max-width: 768px) {
+        #projects-intro {
+            min-height: 30vh; /* Adjust the height for smaller screens */
+            padding: 1rem; /* Reduce the padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #our-projects {
+            font-size: 2rem; /* Adjust the font size for smaller screens */
+            padding: 0.5rem; /* Reduce the padding */
+            margin: 0;
+        }
+
+        #projects-introduction {
+            font-size: 1rem; /* Adjust the font size for smaller screens */
+            margin: 0;
+        }
+
+        .filters-container {
+          flex-direction: column;
+        }
+        .card-intro {
+          font-size: 1.2rem;;
+        }
+    }
 </style>

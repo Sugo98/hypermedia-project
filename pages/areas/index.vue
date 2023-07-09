@@ -182,6 +182,8 @@ export default {
     align-items: center;
     justify-content: flex-end;
     color: white;
+    padding: 2rem;
+    text-shadow: 1px 1px black;
   }
 
   #areas-intro {
@@ -192,6 +194,7 @@ export default {
     /*margin-left: auto;*/
     width: 50vw;
     margin-right: 5%;
+    text-align: center;
   }
 
   #our-focus-container {
@@ -200,21 +203,21 @@ export default {
   }
 
   #our-focus {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: bold;
     margin-bottom: 20px; 
     border: 7px solid white;
     width: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 10%;
   }
 
   #areas-introduction {
     text-align: center; 
-    padding: 30px;
+    padding: 3%;
+    font-size: 1.5rem;
   }
 
-  
   .areas-details {
   margin-top: 3%;
   display: flex;
@@ -223,6 +226,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 60%;
+  background-color: rgb(232,232,232);
 }
 
   .areas-preview-container {
@@ -235,7 +239,8 @@ export default {
   text-align: center;
   color: #023047;
   font-weight: bold;
-  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -246,6 +251,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 100%;
   margin: 0 auto;
 }
@@ -257,7 +263,7 @@ export default {
   cursor: pointer;
   border: 2px solid #023047;
   display: inline-block;
-  width: 40%;
+  width: 100%;
   height: 100%;
   font-weight: bold;
 }
@@ -274,6 +280,19 @@ export default {
   filter: invert(100%);
   color: white;
 }
+
+.area {
+  margin: 2%;
+  position: relative;
+  padding: 1%;
+  cursor: pointer;
+  border: 2px solid #023047;
+  display: flex; /* Use flex display */
+  flex-direction: column;
+  align-items: center; /* Center the logo and text vertically */
+  font-weight: bold;
+}
+
 .area-logo {
   width:100vw;
   height: auto;
@@ -297,36 +316,40 @@ export default {
   justify-content: center;
   align-items: flex-start;
   display: flex;
-  width: 100%;
+  width: 90%;
   text-align: center;
   background-color: rgb(232,232,232);
   padding: 5%;
 }
 
 .area-content-inner {
-  border: 4px solid white;;
+  border: 4px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image-description-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .area-image {
   flex: 1;
-  width: 50%;
-  height: 100%;
+  width:100%;
+  height: auto;
   justify-content: center;
 }
 
 #main-img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 #area-description {
-  font-size: 18px;
+  font-size: 1.2rem;
   width: 100%;
   flex: 1;
   text-align: center;
@@ -354,6 +377,8 @@ export default {
   position: relative;
   width: 100%;
   justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .link {
@@ -393,7 +418,7 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: rgba(2, 48, 71, 0.9);
-    width: 80%;
+    width: 60%;
     margin-bottom: 7%;
     border: 2px solid lightgray;
     color: white;
@@ -420,25 +445,31 @@ export default {
     color: #023047;
     margin-bottom: 10%;
     padding: 1%;
-    flex-wrap: wrap;
+    text-align: center;
   }
   .money {
-    margin-top: 2%;
+    margin-top: 0%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width:100%;
     background-color: white;
     color: black;
   }
 
+  .amount {
+    margin-bottom: 0%;
+  }
+
   .money-area-1, .money-area-2, .money-area-3 {
-    width: 33%;
+    width: 100%;
     text-align: center;
     background-color: lightgray;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    margin-bottom: 0.5rem;
   }
 
   .money-area-1 {
@@ -450,10 +481,62 @@ export default {
   }
 
   .where {
-    font-size: 15px;
+    font-size: 1rem;
     padding-left: 5%;
     padding-right: 5%;
   }
+
+  @media (max-width: 768px) {
+        #areas-intro {
+            min-height: 30vh; /* Adjust the height for smaller screens */
+            padding: 1rem; /* Reduce the padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #focus {
+          justify-content: center;
+        }
+
+        #our-focus-container {
+          justify-content: center;
+          align-items: center;
+        }
+
+        #our-focus {
+            font-size: 2rem; /* Adjust the font size for smaller screens */
+            padding: 0.5rem; /* Reduce the padding */
+            margin: 0;
+        }
+
+        #areas-introduction {
+            font-size: 1rem; /* Adjust the font size for smaller screens */
+            margin: 0;
+        }
+        
+        .area-logo {
+          width: 20vw;
+        }
+        .area-content-inner {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .area-image {
+          display: none;
+        }
+
+        .navigator {
+          width: 40%;
+        }
+
+        .link {
+          font-size: 0.9rem;
+        }
+    }
 
 </style>
 

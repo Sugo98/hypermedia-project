@@ -1,24 +1,54 @@
 <template>
-    <main id="area-page">
-      <div class="first-content" :style="{backgroundImage: 'url(/img/areas/' + area.name + '1.jpg)'}">
-      <div class="area-name"> 
-        {{ area.name }}
+    <main id="area-main">
+      <div class="orientation-info">
+        <NuxtLink class="link-to-areas" to="/areas">Areas</NuxtLink>
+        <span class="separator"> > </span>
+        <span class="orientation-info-name">{{ area.name }}</span>
       </div>
-    </div>
-    <div>
-      Description: {{ area.description }}
-    </div>
 
-    <div class="carousel">
-      <button @click="previous">Previous</button>
-      <div class="cards-container">
-        <ProjectCard v-for="project of displayedProjects" 
-          :name="project.name" 
-          :description="project.description"
-          :link="'/projects/' + project.id"
-          :image="'/img/projects/' + project.id + '.png'" />
-      </div>
-      <button @click="next">Next</button>
+      <section>
+        <div class="area-info-container" :style="{backgroundImage: 'url(/img/areas/' + area.name + '1.jpg)'}">
+          <div class="area-info">
+            <h1 class="area-name">{{area.name}}</h1>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="description-container">
+          <div class="description">
+            {{ area.description }}
+          </div>
+          <div>
+            
+          </div>
+        </div>
+      </section>
+      
+    <div class="projects-container">
+      <section class="projects">
+          <div class="carousel-container">
+            <p class="projects-in-area">PROJECTS IN THIS AREA</p>
+            <div class="carousel">
+              <div class="projects-row">
+                <ProjectCard v-for="project in displayedProjects" 
+                  :key="project.id"
+                  :name="project.name"
+                  :description="project.description"
+                  :link="'/projects/' + project.id"
+                  :image="'/img/projects/' + project.id + '.png'"/> 
+              </div>
+              <div class="buttons-container">
+                <div class="button"> 
+                  <img class="button-img" @click="previous" src="@/assets/img/prev.png"/>
+                </div>
+                <div class="button"> 
+                  <img class="button-img" @click="next" src="@/assets/img/next.png"/>
+                </div>
+              </div>
+            </div>  
+          </div>
+      </section>
     </div>
   </main>
 </template>
@@ -73,68 +103,190 @@
 
 
 <style scoped>
-  #area-page{
-    padding-top: 1%;
-    justify-content: center;
-    background-size: 100%;
-  }
+#area-main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
 
-  .first-content
-  {
-    background-size: cover;
-    background-position: center;
-    height: 800px;
-
-
-  }
-
-  .area-name {
-  position: absolute;
-  left: 50px; /* Adjust the left value according to your preference */
-  top: 50%;
-  transform: translate(50%, -50%);
-  font-size: 60px; /* Adjust the font size according to your preference */
+  .orientation-info {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
   font-weight: bold;
+  justify-content: flex-start;
+  text-align:left;
+  width: fit-content;
+  color: #023047;
+  padding-left: 2%;
+  background-color: white;
+  border-radius: 7px;
+  }
+
+
+  .link-to-areas:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 10px;
+}
+
+.orientation-info-name {
+  margin: 0 10px;
+  text-decoration: underline;
+}
+
+.area-info-container {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    padding-top: 20%;
+    background-size: cover;
+    min-height: 20vh;
+    padding: 2rem;
+}
+
+.area-name {
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Add text shadow */
-  border: 10px solid white;
-  padding: 1%;
+  font-size: 3rem;
+  font-weight: bold;
+  border: 7px solid white;
+  padding: 10%;
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  box-shadow: 1px 1px black;
+}
+
+ .description-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 63.3%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  background-size: cover;
+  min-height: 20vh;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10%;
+  background-color: #023047;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
 
   
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7%;
+  }
 
-.carousel {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+  }
 
-    .cards-container {
-      display: flex;
-    }
+ 
+ 
+  .carousel-container {
+    margin-top: 38px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3%;
+    width: 80%;
+    background-color: rgba(232, 232, 232, 0.5);
+  }
 
-    .card {
-      flex: 0 0 33.33%;
-    }
+  .projects-in-area {
+    text-align: center;
+    color: #023047;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
-    button {
-      margin: 0 10px;
-    }
-  
   .carousel {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .projects-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
-  
-  .cards-container {
+
+  .button:hover {
+    cursor: pointer;
+  }
+
+  .button:active {
+    opacity: 0.5;
+  }
+
+  .button-img {
+    width: 40%;
+    height: auto;
+    filter: invert();
+    background-color: rgb(253, 207, 184);
+    border-radius: 100%;
+  }
+
+  @media (max-width: 768px) {
+  .area-name {
+    font-size: 2rem; /* Adjust the font size for smaller screens */
+    padding: 5%; /* Adjust the padding for smaller screens */
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .card {
-    flex: 0 0 33.33%;
-  }
-  
-  button {
-    margin: 0 10px;
-  }
+}
 </style>

@@ -1,200 +1,347 @@
 <template>
-    <main>
-      <div id="focus">
-        <section id="contacts-intro">
-          <div id="contacts-container">
-            <h1 id="our-contacts">
-              Who are the Yellow Dragons?
-            </h1>
-          </div>
-          <h2 id="contacts-intro" @click="selectContactOption">
-            We invest in new talents!
-            If you want to become <br>a member of the Yellow Dragons, do not hesitate to <span class="contact-link">Contact Us</span>
-          </h2>
-        </section>
-      </div>
-      <div class="ui-tab">
-        <div
-          v-for="(option, index) in options"
-          :key="index"
-          :class="['ui-tab-item', { active: selectedOption === option }]"
-          @click="changeTab(option)"
-        >
-          {{ option }}
+  <main>
+    <div id="focus">
+      <section id="contacts-intro">
+        <div id="contacts-container">
+          <h1 id="our-contacts">
+            Who are the Yellow Dragons?
+          </h1>
         </div>
+        <h2 id="contacts-intro" @click="selectedOption = '2'">
+          We invest in new talents!
+          If you want to become <br>a member of the Yellow Dragons, do not hesitate to <span class="contact-link">Contact Us</span>
+        </h2>
+      </section>
+    </div>
+
+    <section class = form>
+    <div class="info-container">
+      <div class="info"
+        :class="{ active: selectedOption === '0' }"
+        @click="selectedOption = '0'">
+          Who We Are
       </div>
-      <div v-if="selectedOption === 'Who We Are'">
-        <p class="content">At Yellow Dragons, we are a dynamic venture capital firm driven by a passion for discovering and supporting exceptional entrepreneurs. Our mission is to identify visionary leaders with groundbreaking ideas and provide them with the resources and expertise they need to turn their dreams into reality.
-            With a deep understanding of the startup landscape, our experienced team is dedicated to fostering innovation and fueling the growth of our portfolio companies. We believe in the power of transformative ideas and the impact they can have on industries and society as a whole.
-            What sets Yellow Dragons apart is our unwavering commitment to our portfolio companies. We go beyond financial investments by providing hands-on guidance, strategic insights, and access to our extensive network of industry influencers. Our goal is to be more than just capital providers; we aim to be trusted partners on the entrepreneurial journey.
-            At Yellow Dragons, we value collaboration, transparency, and integrity. We believe in building strong relationships with our founders, working alongside them to overcome challenges and seize opportunities. Our team's diverse expertise and extensive knowledge empower us to make informed investment decisions and drive long-term success.
-            Join us on the exciting adventure of discovering and supporting the next generation of visionary leaders. Whether you're an entrepreneur with a groundbreaking idea or an investor seeking compelling opportunities, Yellow Dragons is here to champion your vision and fuel your success</p>
+      <div class="info" 
+        :class="{ active: selectedOption === '1' }"
+        @click="selectedOption = '1'">
+          Our Values
       </div>
-      <div v-else-if="selectedOption === 'Our Values'">
-        <p class="content">Innovation: We embrace a culture of innovation, constantly seeking new ideas and approaches to solve complex challenges. We believe that disruptive thinking is the key to unlocking groundbreaking opportunities.
-            <br><br><strong>Integrity</strong>: We uphold the highest standards of integrity in everything we do. Honesty, transparency, and ethical behavior form the foundation of our relationships with entrepreneurs, partners, and stakeholders.
-            <br><br><strong>Collaboration</strong>: We foster a collaborative ecosystem, working closely with visionary entrepreneurs and industry experts to create a synergistic network. We believe that collaboration fuels growth and enables us to achieve remarkable results together.
-            <br><br><strong>Excellence</strong>: We strive for excellence in all aspects of our work. From rigorous due diligence to strategic investments, we are committed to delivering exceptional value and driving the success of the ventures we support.
-            <br><br><strong>Empowerment</strong>: We empower entrepreneurs to unleash their full potential. We provide not only financial resources but also mentorship, expertise, and a supportive environment to help entrepreneurs thrive and achieve their goals.
-            <br><br><strong>Impact</strong>: We are driven by the desire to make a positive impact on society. We actively seek opportunities to invest in ventures that have the potential to create meaningful change, whether it's through technological advancements, social innovation, or environmental sustainability.
-            <br><br><strong>Long-Term Vision</strong>: We take a long-term view of investments, focusing on sustainable growth and building enduring businesses. We understand that true success is measured by the long-term impact and value generated by our portfolio companies.
-            <br><br>These values are at the heart of everything we do at Yellow Dragons. They inspire us to continuously evolve, adapt to new challenges, and make a difference in the world of venture capital.</p>
+      <div class="info"
+        :class="{ active: selectedOption === '2' }"
+        @click="selectedOption = '2'">
+          Contacts
       </div>
-      <div v-else-if="selectedOption === 'Contacts'">
-        <Contact />
-      </div>
-    </main>
-  </template>
-  
-  <script>
-  
-  export default {
-    data() {
-      return {
-        options: ['Who We Are', 'Our Values', 'Contacts'],
-        selectedOption: 'Who We Are' // L'opzione "Who We Are" è selezionata di default
-      };
-    },
-    methods: {
-      changeTab(option) {
-        this.selectedOption = option;
-      },
-      selectContactOption() {
-        this.changeTab('Contacts');
-      }
+    </div>
+  </section>
+  <section class="text-content">
+    <div class="area-content" v-if="selectedOption === '0'">
+      <p class="content">At Yellow Dragons, we are a dynamic venture capital firm driven by a passion for discovering and supporting exceptional entrepreneurs. Our mission is to identify visionary leaders with groundbreaking ideas and provide them with the resources and expertise they need to turn their dreams into reality.<br><br>
+          With a deep understanding of the startup landscape, our experienced team is dedicated to fostering innovation and fueling the growth of our portfolio companies. We believe in the power of transformative ideas and the impact they can have on industries and society as a whole.
+          <br>What sets Yellow Dragons apart is our unwavering commitment to our portfolio companies. We go beyond financial investments by providing hands-on guidance, strategic insights, and access to our extensive network of industry influencers. <br>Our goal is to be more than just capital providers; we aim to be trusted partners on the entrepreneurial journey.
+          At Yellow Dragons, we value collaboration, transparency, and integrity. We believe in building strong relationships with our founders, working alongside them to overcome challenges and seize opportunities. Our team's diverse expertise and extensive knowledge empower us to make informed investment decisions and drive long-term success.
+          <br><br>Join us on the exciting adventure of discovering and supporting the next generation of visionary leaders. Whether you're an entrepreneur with a groundbreaking idea or an investor seeking compelling opportunities, Yellow Dragons is here to champion your vision and fuel your success</p>
+    </div>
+    <div class="area-content" v-else-if="selectedOption === '1'">
+      <p class="content">Innovation: We embrace a culture of innovation, constantly seeking new ideas and approaches to solve complex challenges. We believe that disruptive thinking is the key to unlocking groundbreaking opportunities.
+          <br><strong>Integrity</strong>: We uphold the highest standards of integrity in everything we do. Honesty, transparency, and ethical behavior form the foundation of our relationships with entrepreneurs, partners, and stakeholders.
+          <br><strong>Collaboration</strong>: We foster a collaborative ecosystem, working closely with visionary entrepreneurs and industry experts to create a synergistic network. We believe that collaboration fuels growth and enables us to achieve remarkable results together.
+          <br><strong>Excellence</strong>: We strive for excellence in all aspects of our work. From rigorous due diligence to strategic investments, we are committed to delivering exceptional value and driving the success of the ventures we support.
+          <br><strong>Empowerment</strong>: We empower entrepreneurs to unleash their full potential. We provide not only financial resources but also mentorship, expertise, and a supportive environment to help entrepreneurs thrive and achieve their goals.
+          <br><strong>Impact</strong>: We are driven by the desire to make a positive impact on society. We actively seek opportunities to invest in ventures that have the potential to create meaningful change, whether it's through technological advancements, social innovation, or environmental sustainability.
+          <br><strong>Long-Term Vision</strong>: We take a long-term view of investments, focusing on sustainable growth and building enduring businesses. We understand that true success is measured by the long-term impact and value generated by our portfolio companies.
+          <br>These values are at the heart of everything we do at Yellow Dragons. They inspire us to continuously evolve, adapt to new challenges, and make a difference in the world of venture capital.</p>
+    </div>
+    <div class="area-content" v-else-if="selectedOption === '2' || queryParams.option === '2'">
+        <div id="image-contact-text-container">
+          <div class="image-contact-text">
+            <div class="image-contact-container">
+              <img class="img" src="~/assets/img/address.png" />
+            </div>
+            <div class="contact-text-container">
+              <h3>Address</h3>
+              <p>Fire Street - 42 - DragonLand</p>
+            </div>
+          </div>
+          <div class="image-contact-text">
+            <div class="image-contact-container">
+              <img class="img" src="~/assets/img/phone.jpg" />
+            </div>
+            <div class="contact-text-container">
+              <h3>During Business Hours</h3>
+              <p>Tel. 30483728190</p>
+            </div>
+          </div>
+          <div class="image-contact-text">
+            <div class="image-contact-container">
+              <img class="img" src="~/assets/img/mail.png" />
+            </div>
+            <div class="contact-text-container">
+              <h3>For General Questions</h3>
+              <p>yellowdragons@mail.com</p>
+            </div>
+          </div>
+          <div class="image-contact-text">
+            <div class="image-contact-container">
+              <img class="img" src="~/assets/img/fax.jpg" />
+            </div>
+            <div class="contact-text-container">
+              <h3>24/7</h3>
+              <p>Fax. 0248026819@invio.faxon.com</p>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+  </main>
+</template>
+
+<script>
+export default {
+  setup() {
+    const router = useRouter()
+    const queryParams = router.currentRoute.value.query
+    const selectedOption = ref(queryParams.option || '0')
+
+    return {
+      selectedOption
     }
-  };
-  </script>
+  }
+}
+</script>
   
-  <style scoped>
+<style scoped>
 #contacts-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-content: flex-start;
-  justify-content: space-between;
-  padding-left: 10%;
-  padding-right: 10%;
+display: grid;
+grid-template-columns: auto auto auto;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: center;
+align-content: flex-start;
+justify-content: space-between;
+padding-left: 10%;
+padding-right: 10%;
 }
 
 #focus {
-  background-image: url("@/assets/img/areas_background.jpg");
-  background-size: cover;
-  width: 100vw;
-  height: 60vh;
-  background-position-y: 65%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  color: white;
+background-image: url("@/assets/img/areas_background.jpg");
+background-size: cover;
+    width: 100vw;
+    min-height: 40vh; 
+    background-position-y: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    padding: 2rem;
+    text-shadow: 1px 1px black;
 }
 
 #contacts-intro {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50vw;
-  margin-right: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*margin-left: auto;*/
+    width: 50vw;
+    margin-right: 5%;
+    text-align: center;
 }
 
 #contacts-container {
-  text-align: right;
-  margin-bottom: 20px;
+text-align: right;
+margin-bottom: 20px;
 }
 
 #our-contacts {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  border: 7px solid white;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px; 
+    border: 7px solid white;
+    width: 100%;
+    text-align: center;
+    padding: 5%;
 }
 
 #contacts-introduction {
-  text-align: center;
-  padding: 30px;
+  text-align: center; 
+    padding: 3%;
+    font-size: 1.5rem;
 }
 
-.ui-tab {
+.text-content {
   display: flex;
-  background-color: #f0f0f0;
-  border-radius: 4px;
-  overflow: hidden;
-}
+  width:80%;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  border: 2px solid lightgray;
+  background-color:  rgba(2, 48, 71, 0.9);
 
-.ui-tab-item {
-  padding: 12px 20px;
-  font-size: 15px;
-  font-weight: bolder;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
-
-.ui-tab-item:hover {
-  opacity: 0.7;
-}
-
-.ui-tab-item.active {
-  background-color: rgb(108, 171, 192);
-  color: rgb(228, 237, 238);
-}
-
 .content {
-  padding: 20px;
-  line-height: 1.2;
-  font-size: 15px;
+  flex: 1 1 auto; 
+  padding: 3%;
+  color: black;
+  border-radius: 20px;
 }
 
 .area-image {
-  margin-top: 20px;
+margin-top: 20px;
+}
+
+.area-content {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 83%;
+  margin: 2%;
+  padding:1%;
+  text-align: left;
+  background-color:white;
+  border: 20px solid lightgray;
 }
 
 #image-text-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
+}
+
+.image-container {
+width: 100px;
+height: 100px;
+}
+
+.text-container {
+margin-top: 10px;
+}
+
+.img {
+width: 80px;
+height: 80px;
+object-fit: cover;
+}
+
+h3 {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+p {
+  font-size: 17px;
+  font-weight: 500;}
+
+.contact-link {
+text-decoration: underline;
+cursor: pointer;
+}
+
+.contact-link:hover {
+opacity: 0.7;
+}
+
+.form {
+justify-content: left;
+text-align: left;
+display: flex;
+width: 100%;
+}
+
+.info-container {
+display: flex;
+justify-content: center;
+margin-bottom: 2%;
+background-color: rgba(211,211,211,0.5);
+padding: 1%;
+border-radius: 7px;
+}
+
+.info {
+padding: 10px;
+margin: 0 5px;
+cursor: pointer;
+color: #023047;
+font-weight: bold;
+}
+
+.info:hover {
+text-decoration: underline;
+}
+.info.active {
+background-color: #023047;
+color: white;
+border-radius: 7px;
+text-decoration: none;
+
+}
+.contact-link {
+text-decoration: underline;
+cursor: pointer;
+}
+
+.contact-link:hover {
+opacity: 0.7;
+}
+
+#image-contact-text-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
-.image-container {
+.image-contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.image-contact-container {
   width: 100px;
   height: 100px;
 }
 
-.text-container {
+.contact-text-container {
   margin-top: 10px;
 }
+@media (max-width: 768px) {
 
-.img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-}
+  #focus {
+    justify-content: center;
+  }
 
-h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
+        #contacts-intro {
+            min-height: 30vh; /* Adjust the height for smaller screens */
+            padding: 1rem; /* Reduce the padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-p {
-  font-size: 14px;
-}
+        #our-contacts {
+            font-size: 2rem; /* Adjust the font size for smaller screens */
+            padding: 0.5rem; /* Reduce the padding */
+            margin: 0;
+        }
 
-.contact-link {
-  text-decoration: underline;
-  cursor: pointer;
-}
+        #contacts-intro {
+            font-size: 1rem; /* Adjust the font size for smaller screens */
+            margin: 0;
+        }
 
-.contact-link:hover {
-  opacity: 0.7;
-}
-  </style>
-  
+        .ceo-container {
+            justify-content: center;
+        }
+    }
+
+</style>
