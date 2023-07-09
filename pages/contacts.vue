@@ -124,7 +124,7 @@ padding-right: 10%;
 }
 
 #focus {
-background-image: url("@/assets/img/areas_background.jpg");
+background-color: #023047;
 background-size: cover;
     width: 100vw;
     min-height: 40vh; 
@@ -135,7 +135,7 @@ background-size: cover;
     justify-content: flex-end;
     color: white;
     padding: 2rem;
-    text-shadow: 1px 1px black;
+    text-shadow: 2px 2px black;
 }
 
 #contacts-intro {
