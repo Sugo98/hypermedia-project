@@ -246,10 +246,11 @@ opacity: 0.7;
 }
 
 .form {
-justify-content: left;
-text-align: left;
+justify-content: right;
+text-align: right;
+padding-right: 20%;
 display: flex;
-width: 100%;
+width: 90%;
 }
 
 .info-container {
