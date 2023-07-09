@@ -7,7 +7,7 @@
       </div>
 
       <section>
-        <div class="area-info-container" :style="{backgroundImage: 'url(/img/areas/' + area.name + '1.jpg)'}">
+        <div class="area-info-container" :style="{backgroundImage: 'url(/img/areas/' + area.name.toLowerCase() + '1.jpg)'}">
           <div class="area-info">
             <h1 class="area-name">{{area.name}}</h1>
           </div>
