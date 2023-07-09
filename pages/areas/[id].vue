@@ -28,10 +28,24 @@
 
   const route = useRoute();
   const id = route.params.id;
-  const { data: area } = await useFetch(useRuntimeConfig().public.baseURL + '/server/areas/' + id);
+  // const { data: area } = await useFetch(useRuntimeConfig().public.baseURL + '/server/areas/' + id);
   
+  import { createClient } from '@supabase/supabase-js'
+  const supabaseUrl = useRuntimeConfig().public.supabaseURL
+  const supabaseKey = useRuntimeConfig().public.supabaseKEY
+  const supabase = createClient(supabaseUrl, supabaseKey)
+
+  const { data:area, error } = await supabase
+    .from('areas')
+    .select("* ,projects(*)")
+    .eq('id',id)
+    .single()
+
+  if (error) console.log(error)
+  console.log(area)
+
   let currentIndex = ref(0);
-  const projects = area.value.projects;
+  const projects = area.projects;
 
   const displayedProjects = computed(() => {
     let temp = projects.slice(currentIndex.value, currentIndex.value + 3);
@@ -56,6 +70,7 @@
     }
   }
 </script>
+
 
 <style scoped>
   #area-page{
