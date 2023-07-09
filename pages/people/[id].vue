@@ -81,9 +81,6 @@ const { data:person, error } = await supabase
   .eq('id',id)
   .single()
 
-if (error) console.log(error)
-console.log(person)
-
 let currentIndex = ref(0);
 const projects = person.projects;
 
@@ -110,16 +107,18 @@ const displayedProjects = computed(() => {
 function previous() {
   currentIndex.value--;
   if (currentIndex.value < 0) {
-    currentIndex.value = projects.length - 1;
+    currentIndex.value = worksOn.length - 1;
   }
 }
 
 function next() {
   currentIndex.value++;
-  if (currentIndex.value === projects.length) {
+  if (currentIndex.value === worksOn.length) {
     currentIndex.value = 0;
   }
 }
+
+console.log(worksOn)
 </script>
 
 <style scoped>
