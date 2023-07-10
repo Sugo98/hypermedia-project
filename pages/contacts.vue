@@ -42,7 +42,7 @@
           <br><br>Join us on the exciting adventure of discovering and supporting the next generation of visionary leaders. Whether you're an entrepreneur with a groundbreaking idea or an investor seeking compelling opportunities, Yellow Dragons is here to champion your vision and fuel your success</p>
     </div>
     <div class="area-content" v-else-if="selectedOption === '1'">
-      <p class="content">Innovation: We embrace a culture of innovation, constantly seeking new ideas and approaches to solve complex challenges. We believe that disruptive thinking is the key to unlocking groundbreaking opportunities.
+      <p class="content"><strong>Innovation</strong>: We embrace a culture of innovation, constantly seeking new ideas and approaches to solve complex challenges. We believe that disruptive thinking is the key to unlocking groundbreaking opportunities.
           <br><strong>Integrity</strong>: We uphold the highest standards of integrity in everything we do. Honesty, transparency, and ethical behavior form the foundation of our relationships with entrepreneurs, partners, and stakeholders.
           <br><strong>Collaboration</strong>: We foster a collaborative ecosystem, working closely with visionary entrepreneurs and industry experts to create a synergistic network. We believe that collaboration fuels growth and enables us to achieve remarkable results together.
           <br><strong>Excellence</strong>: We strive for excellence in all aspects of our work. From rigorous due diligence to strategic investments, we are committed to delivering exceptional value and driving the success of the ventures we support.
