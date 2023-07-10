@@ -1,3 +1,4 @@
+
 <template>
     <div class="content">
       <main id="home-page">

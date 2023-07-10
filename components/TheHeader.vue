@@ -3,7 +3,7 @@
         <div class="header-content">
             <div class="logo-wrapper">
                 <NuxtLink class="logo-link" to="/">
-                    <img id="logo" src="~/assets/img/logo.png" />
+                    <img id="logo" src="~/assets/img/logo-yellow-dragons1.png" />
                 </NuxtLink>
             </div>
             <div class="center-landmarks">
@@ -35,7 +35,7 @@ header {
     left: 0;
     right: 0;
     z-index: 999;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .header-content {

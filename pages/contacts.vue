@@ -124,7 +124,7 @@ padding-right: 10%;
 }
 
 #focus {
-background-color: #023047;
+background-color: rgba(2, 48, 71, 0.9);
 background-size: cover;
     width: 100vw;
     min-height: 40vh; 
