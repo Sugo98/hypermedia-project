@@ -1,3 +1,4 @@
+<!-- All areas page -->
 <template>
   <div class="content">
     <main id="areas">
@@ -18,6 +19,7 @@
           <div class="navigator">
             <p class="nav-intro">OUR FOCUS AREAS</p>
             <ul class="areas-container">
+               <!-- Loop through each "area" in the "areas" array -->
               <div
                 v-for="(area, index) in areas"
                 :key="index"
@@ -33,6 +35,8 @@
         </div>
         <div class="area-content">
           <div class="area-content-inner">
+            <!-- Loop through each "area" in the "areas" array.
+                 Only the activeArea will be displayed -->
             <div
               v-for="(area, index) in areas"
               :key="index"
@@ -45,6 +49,7 @@
               <div id="area-description" :class="{ 'fade-in': activeArea === index }">
                 <h2 id="area-desc-name">{{ area.name }}</h2>
                 <p id="area-desc-desc">{{ area.description }}</p>
+                <!-- NuxtLink components for navigation -->
                 <div class="links">
                   <NuxtLink class="link" :to="'/areas/' + area.id">MORE DETAILS</NuxtLink>
                   <NuxtLink class="link" :to="`/projects/allProjects/?area=${selectedArea}`">SEE PROJETCS</NuxtLink>
@@ -84,6 +89,7 @@
 
 <script>
 export default {
+  // Data of the three areas that will be displayed in the "area-content" div
   data() {
     return {
       activeArea: 0,
@@ -117,25 +123,31 @@ export default {
       ],
     };
   },
+
   methods: {
+    // Method to toggle between the areas in the navigator
     toggleArea(area) {
       if (area !== this.activeArea) {
         this.activeArea = area;
         this.selectedArea = area;
         this.isAutoToggleStopped = true;
+        // Once an area is selected the auto toggle must stop so the user can read the content
         this.stopAutoToggle();
       }
     },
+    // Method to toggle automatically every 5 seconds between the areas
     autoToggleArea() {
       const nextArea = (this.activeArea + 1) % this.areas.length;
       this.activeArea = nextArea;
       this.selectedArea = nextArea;
     },
+    // Method to start the auto-toggle
     startAutoToggle() {
       this.autoToggleInterval = setInterval(() => {
         this.autoToggleArea();
       }, 5000);
     },
+    // Method to stop the auto toggle
     stopAutoToggle() {
       clearInterval(this.autoToggleInterval);
       this.autoToggleInterval = null;
@@ -152,6 +164,7 @@ export default {
   animation: fade-in 1s;
 }
 
+/* To add a "transition effect when the area-content changes */ 
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -486,6 +499,7 @@ export default {
     padding-right: 5%;
   }
 
+  /* Specify different style for when the page is too small */
   @media (max-width: 768px) {
         #areas-intro {
             min-height: 30vh; /* Adjust the height for smaller screens */

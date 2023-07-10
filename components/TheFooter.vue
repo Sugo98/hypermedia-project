@@ -1,3 +1,4 @@
+<!-- Footer component -->
 <template>
   <footer>
     <div class="footer-content">
@@ -5,8 +6,7 @@
         <ul>
           <li><NuxtLink class="footer-link" to="/">Home</NuxtLink></li>
           <li><NuxtLink class="footer-link" to="/contacts/?option=0">About Us</NuxtLink></li>
-          <li><NuxtLink class="footer-link" :to="`/contacts/?option=2`">Contact Us</NuxtLink>
-</li>
+          <li><NuxtLink class="footer-link" :to="`/contacts/?option=2`">Contact Us</NuxtLink></li>
         </ul>
       </div>
     </div>

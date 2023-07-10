@@ -1,3 +1,4 @@
+<!-- Project card: this card will be used to display a single project and can be used as a link to jump to the page of said project-->
 <template>
     <main>
         <NuxtLink :to="link" class="divLink">
@@ -14,6 +15,7 @@
 </template>
 
 <script setup>
+    // Retrive project info from the main page
     const props = defineProps(['name', 'description', 'link', 'image'])
 </script>
 

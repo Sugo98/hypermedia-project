@@ -1,3 +1,4 @@
+<!-- Single area page -->
 <template>
     <main id="area-main">
       <div class="orientation-info">
@@ -71,12 +72,13 @@
     .eq('id',id)
     .single()
 
-  if (error) console.log(error)
-  console.log(area.name.toLowerCase())
+  //if (error) console.log(error)
+  //console.log(area.name.toLowerCase())
 
   let currentIndex = ref(0);
   const projects = area.projects;
 
+  // Function to display the projects only three at a time in a cyclic way
   const displayedProjects = computed(() => {
     let temp = projects.slice(currentIndex.value, currentIndex.value + 3);
     
@@ -86,6 +88,7 @@
     return temp; 
   });
   
+  // Function to cycle backward through the projects
   function previous() {
     currentIndex.value--
     if (currentIndex.value < 0) {
@@ -93,6 +96,7 @@
     }
   }
   
+  // Function to cycle forward through the projects
   function next() {
     currentIndex.value++
     if (currentIndex.value === projects.length) {
@@ -276,10 +280,12 @@
     width: 40%;
     height: auto;
     filter: invert();
+    /* Since we are inverting the color we should put the opposite background color */ 
     background-color: rgb(253, 207, 184);
     border-radius: 100%;
   }
 
+  /* Specify different style for when the page is too small */
   @media (max-width: 768px) {
   .area-name {
     font-size: 2rem; /* Adjust the font size for smaller screens */

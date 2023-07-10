@@ -1,6 +1,9 @@
+<!-- Layout of all the pages -->
+
 <template> 
     <div class="page">
         <TheHeader />
+        <!-- Main content of the page-->
         <main id ="content">
             <slot />
         </main>
@@ -32,6 +35,7 @@ body {
     align-items: center;
 }
 
+/* Specify different style for when the page is too small */
 @media (max-width: 768px) {
     #content {
         margin-top: 22vh;

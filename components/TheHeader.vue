@@ -1,3 +1,5 @@
+<!-- Header component -->
+
 <template>
     <header>
         <div class="header-content">
@@ -21,11 +23,14 @@
 </template>
 
 <script setup>
+    // Function necessary for highlighting the landmark in sub-pages (see above)
+    /* 
     const route = useRoute()
         const isPeopleActive = computed(() => {
         const routePath = route.path
         return routePath.startsWith('/people')
     })
+    */
 </script>
 
 <style>

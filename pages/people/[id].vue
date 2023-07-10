@@ -1,3 +1,4 @@
+<!-- Single person page -->
 <template>
   <main id="person-main">
     <div class="orientation-info">
@@ -6,6 +7,7 @@
       <span class="orientation-info-name">{{ person.name }}</span>
     </div>
     
+    <!-- Person info -->
     <section>
       <div class="person-info-container">
         <div class="person-info">
@@ -26,6 +28,7 @@
       </div>
     </section>
 
+    <!-- List of prjects the employee is working on-->
     <div class="projects-container">
       <section class="projects">
         <div class="supervisor-carousel-container">
@@ -81,12 +84,14 @@ const { data:person, error } = await supabase
   .eq('id',id)
   .single()
 
+
 let currentIndex = ref(0);
 const projects = person.projects;
 
 let supervisor;
 let worksOn = [];
 
+// Code to extract the project which the employee supervises from the others
 for (let project of projects) {
   if (project.supervisorId == person.id)
     supervisor = project;
@@ -94,9 +99,9 @@ for (let project of projects) {
     worksOn.push(project);
 }
 
+// Function to display the projects only three at a time in a cyclic way
 const displayedProjects = computed(() => {
   let temp = worksOn.slice(currentIndex.value, currentIndex.value + 3);
-
   if (temp.length < 3) {
     temp = temp.concat(worksOn.slice(0, 3 - temp.length));
   }
@@ -104,6 +109,7 @@ const displayedProjects = computed(() => {
   return temp;
 });
 
+// Function to cycle backward through the projects
 function previous() {
   currentIndex.value--;
   if (currentIndex.value < 0) {
@@ -111,14 +117,13 @@ function previous() {
   }
 }
 
+// Function to cycle forward through the projects
 function next() {
   currentIndex.value++;
   if (currentIndex.value === worksOn.length) {
     currentIndex.value = 0;
   }
 }
-
-console.log(worksOn)
 </script>
 
 <style scoped>
@@ -317,8 +322,8 @@ console.log(worksOn)
     border-radius: 100%;
   }
 
+  /* Specify different style for when the page is too small */
   @media (max-width: 768px) {
-
     .person-info-container {
     margin-top: 20%;
   display: flex;

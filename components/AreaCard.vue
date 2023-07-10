@@ -1,3 +1,4 @@
+<!-- Area card component -->
 <template>
     <main>
         <NuxtLink :to="link" class="divLink">
@@ -43,27 +44,6 @@
         opacity: 0.5;
     }
     
-
-    .image-container
-    {
-        display: flex;
-        justify-content: center;
-        border: 2px dashed red;
-        border-radius: 10px;
-        padding: 2px;
-        width: 250px;
-        height: 250px;
-    }
-
-    .img
-    {
-        vertical-align: middle;
-        max-width: 100%;
-        max-height: 100%;
-        height: auto;
-        width: auto;
-        margin: auto;
-    }
 
     .details 
     {

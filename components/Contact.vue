@@ -1,3 +1,5 @@
+<!-- Contacts component: This component shows the main contacts of the page -->
+
 <template>
     <div class="area-image">
       <div id="image-text-container">

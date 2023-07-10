@@ -1,3 +1,4 @@
+<!-- About us component -->
 <template>
   <div class="about-us-card">
     <div class="ui-tab">
@@ -28,6 +29,7 @@
 <script>
 
 export default {
+  // Data to be displayed in the card
   data() {
     return {
       options: ['Who We Are', 'Our Values', 'Contacts'],

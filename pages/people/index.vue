@@ -1,3 +1,4 @@
+<!-- All people page -->
 <template class="content">
     <main id="people">
         <section id="team-intro">
@@ -23,7 +24,8 @@
                 />
             </div>
         </section>
-    
+        
+        <!-- CEO section -->
         <section class="ceo">
             <div class="ceo-container">
                 <div class="ceo-description">
@@ -47,7 +49,7 @@
 import PersonCard from '~/components/PersonCard.vue';
 import { createClient } from '@supabase/supabase-js'
 
-console.log("supabaseURL = " + useRuntimeConfig().public.supabaseURL)
+//console.log("supabaseURL = " + useRuntimeConfig().public.supabaseURL)
 
 const supabaseUrl = useRuntimeConfig().public.supabaseURL
 const supabaseKey = useRuntimeConfig().public.supabaseKEY
@@ -59,15 +61,13 @@ const { data, error } = await supabase
 let employees = new Array();
 let ceo;
 
+// code to separate ceo from other employess
 for (let person of data) {
     if (person.id == 10)
         ceo = person; 
     else 
         employees.push(person)
 }
-
-
-
 </script>
 
 <style scoped>
@@ -144,31 +144,32 @@ for (let person of data) {
     text-decoration: none;
     border: none;
     margin-bottom: 3%;
-}
+    }
 
-.ceo-container {
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    margin: 0 auto;
-    background-color: #023047;
-    align-items: center;
-    margin-bottom: 10%;
-    flex-wrap: wrap;
-}
+    .ceo-container {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        margin: 0 auto;
+        background-color: #023047;
+        align-items: center;
+        margin-bottom: 10%;
+        flex-wrap: wrap;
+    }
 
-.ceo-description {
-    flex: 1;
-    padding: 10%;
-    color: white;
-    
-}
+    .ceo-description {
+        flex: 1;
+        padding: 10%;
+        color: white;
 
-.ceo-card {
-    flex: 1;
-}
+    }
 
-@media (max-width: 768px) {
+    .ceo-card {
+        flex: 1;
+    }
+
+    /* Specify different style for when the page is too small */
+    @media (max-width: 768px) {
         #team-intro {
             min-height: 30vh; /* Adjust the height for smaller screens */
             padding: 1rem; /* Reduce the padding */

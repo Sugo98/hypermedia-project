@@ -1,5 +1,7 @@
+<!-- All projects page -->
 <template class="content">
   <main id="AllProjects">
+
     <section id="projects-intro">
       <div id="projects">
         <div id="our-projects-container">
@@ -13,6 +15,7 @@
       </div>
     </section>
 
+    <!-- Form to toggle between the areas -->
     <section class = form>
       <div class="filters-container">
         <div class="filter"
@@ -55,9 +58,8 @@
 
 <script setup>
   const router = useRouter()
-
   const queryParams = router.currentRoute.value.query
-
+  // Set the desired area based on URL data
   const selectedArea = ref(queryParams.area || 'all')
 
   import { createClient } from '@supabase/supabase-js'
@@ -69,6 +71,7 @@
     .from('projects')
     .select()
 
+  // Function to filter the projects based on the selected area
   const filteredProjects = computed(() => {
       if (selectedArea.value === 'all') {
         return data; // Return all projects if 'all' is selected
@@ -188,6 +191,7 @@
   margin-bottom: 3%;
 }
 
+/* Specify different style for when the page is too small */
 @media (max-width: 768px) {
         #projects-intro {
             min-height: 30vh; /* Adjust the height for smaller screens */

@@ -1,5 +1,7 @@
+<!-- Most relevant projects page -->
 <template>
   <div class="content">
+    <!-- Page introduction -->
     <main id="areas">
       <div id="focus">
         <section id="projects-intro">
@@ -43,17 +45,12 @@
 </template>
 
 <script setup>
-  const router = useRouter()
-
-  const queryParams = router.currentRoute.value.query
-
-  const selectedArea = ref(queryParams.area || 'all')
-
   import { createClient } from '@supabase/supabase-js'
   const supabaseUrl = useRuntimeConfig().public.supabaseURL
   const supabaseKey = useRuntimeConfig().public.supabaseKEY
   const supabase = createClient(supabaseUrl, supabaseKey)
 
+  // call to the database
   const { data:projects, error } = await supabase
     .from('projects')
     .select()
@@ -176,6 +173,7 @@
   margin-bottom: 7%; 
 }
 
+/* Specify different style for when the page is too small */
 @media (max-width: 768px) {
         #projects-intro {
             min-height: 30vh; /* Adjust the height for smaller screens */

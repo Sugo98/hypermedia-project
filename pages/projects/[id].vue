@@ -1,3 +1,4 @@
+<!-- Single project page -->
 <template>
   <main id="project-main">
     <div class="orientation-info">
@@ -17,7 +18,8 @@
         </div>
       </div>
     </section>
-
+    
+    <!-- Project main content -->
     <section>
       <div class="image-description-container">
         <div class="project-image">
@@ -29,8 +31,8 @@
       </div>
     </section>
 
+    <!-- People working on this project -->
     <p class="involved"> People involved </p>
-
     <div class="people-container">
       <section class="people">
         <div class="supervisor-container">
@@ -69,8 +71,7 @@
   .eq('id',id)
   .single()
 
-  if (error)  console.log(error)
-  console.log(project)
+  // Code to separate supervisor from other workers
   let supervisor;
   let workers = [];
   for (let p of project.people) {
@@ -254,52 +255,50 @@
     margin-top: 20px;
   }
 
+  /* Specify different style for when the page is too small */
   @media (max-width: 768px) {
-  
-  .project-info-container {
+    .project-info-container {
+      margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+    padding: 0 10%;
+  }
+
+  .project-info {
+    text-align: center;
+    font-size: x-large;
+    background-color: rgba(2, 48, 71, 0.9);
+    border-radius: 7px;
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+      .image-description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
+    margin-bottom: 5%;
+    border-bottom: 2px solid lightgray;
+    border-top: 2px solid lightgray;
+  }
+
+  .project-image {
     margin-top: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 5%;
-  padding: 0 10%;
-}
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
 
-.project-info {
-  text-align: center;
-  font-size: x-large;
-  background-color: rgba(2, 48, 71, 0.9);
-  border-radius: 7px;
-  color: white;
-  width: 100%;
-  margin-bottom: 20px;
-}
-    .image-description-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 10%;
-  margin-bottom: 5%;
-  border-bottom: 2px solid lightgray;
-  border-top: 2px solid lightgray;
-}
-
-.project-image {
-  margin-top: 20%;
-  margin-right: 0;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.project-description {
-  font-size: 18px;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 1%;
-  border-radius: 7px;
-  text-align: center;
-  width: 100%;
-}
-
-
+  .project-description {
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1%;
+    border-radius: 7px;
+    text-align: center;
+    width: 100%;
+  }
 }
 </style>

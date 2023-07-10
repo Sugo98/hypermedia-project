@@ -2,6 +2,7 @@
 <template>
     <div class="content">
       <main id="home-page">
+
         <section id="section-intro">
           <div id="sub">
             <div id="container">
@@ -11,7 +12,7 @@
             <NuxtLink class="link" to="/people">Learn More</NuxtLink>
           </div>
         </section>
-  
+        
         <section id="section-projects">
           <div id="sub">
             <div id="container">
@@ -21,7 +22,7 @@
             <NuxtLink class="link" to="/projects">View Projects</NuxtLink>
           </div>
         </section>
-  
+        
         <section id="section-areas">
           <div id="sub">
             <div id="container">
