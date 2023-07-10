@@ -15,7 +15,11 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: "Yellow Dragons",
-            link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+            link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+            meta: [
+                {name: "description"},
+                {content: "Welcome to our venture capital firm! We specialize in investing in innovative startups with high growth potential. Our experienced team provides strategic guidance, mentorship, and funding to help entrepreneurs turn their ideas into successful businesses. Explore our focus areas, learn about our portfolio companies, and get in touch with us to discuss investment opportunities. Start your entrepreneurial journey with us today!"}
+            ]
         }
     },
 })

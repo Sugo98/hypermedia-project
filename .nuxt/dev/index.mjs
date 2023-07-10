@@ -1069,7 +1069,7 @@ const renderer$1 = /*#__PURE__*/Object.freeze({
   default: renderer
 });
 
-const _virtual__headStatic = {"headTags":"<meta charset=\"utf-8\">\n<title>Yellow Dragons</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\">","bodyTags":"","bodyTagsOpen":"","htmlAttrs":"","bodyAttrs":""};
+const _virtual__headStatic = {"headTags":"<meta charset=\"utf-8\">\n<title>Yellow Dragons</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<meta name=\"description\">\n<meta content=\"Welcome to our venture capital firm! We specialize in investing in innovative startups with high growth potential. Our experienced team provides strategic guidance, mentorship, and funding to help entrepreneurs turn their ideas into successful businesses. Explore our focus areas, learn about our portfolio companies, and get in touch with us to discuss investment opportunities. Start your entrepreneurial journey with us today!\">\n<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\">","bodyTags":"","bodyTagsOpen":"","htmlAttrs":"","bodyAttrs":""};
 
 const _virtual__headStatic$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
